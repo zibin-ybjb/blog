@@ -8,7 +8,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   lang: 'zh-CN',
   title: '子斌的前端分享',
   description: 'Just playing around',
-  base:'/',
+  base:'/blog/',
 
   // 主题和它的配置
   theme: '@vuepress/theme-default',
