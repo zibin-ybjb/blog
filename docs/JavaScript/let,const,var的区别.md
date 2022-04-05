@@ -33,14 +33,14 @@ console.log(hello); // error: hello is not defined
 var 变量可以重新声明和修改
 这意味着我们可以在相同的作用域内执行下面的操作，并且不会出错
 
-```
+``` js
 var greeter = 'hey hi';
 var greeter = 'say Hello instead';
 ```
 
 又比如
 
-```
+``` js
 var greeter = 'hey hi';
 greeter = 'say Hello instead';
 ```
@@ -49,14 +49,14 @@ greeter = 'say Hello instead';
 
 变量提升是 JavaScript 的一种机制:在执行代码之前，变量和函数声明会移至其作用域的顶部。 这意味着如果我们这样做:
 
-```
+``` js
 console.log(greeter);
 var greeter = 'say hello';
 ```
 
 生面的代码会被解释为:
 
-```
+``` js
 var greeter;
 console.log(greeter); // greeter is undefined
 greeter = 'say hello';
@@ -68,7 +68,7 @@ greeter = 'say hello';
 
 var 有一个弱点。 我将使用以下示例进行说明：
 
-```
+``` js
     var greeter = "hey hi";
     var times = 4;
 if (times &gt; 3) {
@@ -92,7 +92,7 @@ let 现在已经成为变量声明的首选。 这并不奇怪，因为它是对
 
 因此，在带有 let 的块中声明的变量仅可在该块中使用。 让我用一个例子解释一下
 
-```
+``` js
 let greeting = 'say Hi';
 let times = 4;
 
@@ -109,21 +109,21 @@ console.log(hello); // hello is not defined
 
 就像 var 一样，用 let 声明的变量可以在其范围内被修改。 但与 var 不同的是，let 变量无法在其作用域内被重新声明。 来看下面的栗子:
 
-```
+``` js
 let greeting = 'say Hi';
 greeting = 'say Hello instead';
 ```
 
 上面的代码将会返回一个错误:
 
-```
+``` js
 let greeting = 'say Hi';
 let greeting = 'say Hello instead'; // error: Identifier 'greeting' has already been declared
 ```
 
 但是，如果在不同的作用域中定义了相同的变量，则不会有错误:
 
-```
+``` js
 let greeting = 'say Hi';
 if (true) {
     let greeting = 'say Hello instead';
@@ -159,14 +159,14 @@ console.log(greeting); // "say Hi"
 
 这意味着用 const 声明的变量的值保持不变。 不能修改或重新声明。 因此，如果我们使用 const 声明变量，那么我们将无法做到这一点:
 
-```
+``` js
 const greeting = 'say Hi';
 greeting = 'say Hello instead'; // error: Assignment to constant variable.
 ```
 
 或者这个这样:
 
-```
+``` js
 const greeting = 'say Hi';
 const greeting = 'say Hello instead'; // error: Identifier 'greeting' has already been declared
 ```
@@ -175,7 +175,7 @@ const greeting = 'say Hello instead'; // error: Identifier 'greeting' has alread
 
 当用 const 声明对象时，这种行为却有所不同。 虽然不能更新 const 对象，但是可以更新该对象的属性。 因此，如果我们声明一个 const 对象为
 
-```
+``` js
 const greeting = {
     message: 'say Hi',
     times: 4,
@@ -184,7 +184,7 @@ const greeting = {
 
 同样不能像下面这样做:
 
-```
+``` js
 const greeting = {
     words: 'Hello',
     number: 'five',
@@ -194,7 +194,7 @@ const greeting = {
 
 但我们可以这样做:
 
-```
+``` js
 greeting.message = 'say Hello instead';
 ```
 
