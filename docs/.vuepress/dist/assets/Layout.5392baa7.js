@@ -1,0 +1,1 @@
+import{r as o,o as t,c as _,e as a}from"./app.c16415f9.js";import{_ as n}from"./plugin-vue_export-helper.21dcd24c.js";const r={},c={class:"aaa"};function s(l,u){const e=o("Content");return t(),_("div",c,[a(e)])}var m=n(r,[["render",s],["__file","Layout.vue"]]);export{m as default};

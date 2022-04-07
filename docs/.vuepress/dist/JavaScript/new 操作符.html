@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.37">
+    <title>new 操作符 | 子斌的前端分享</title><meta name="description" content="Just playing around">
+    <link rel="modulepreload" href="/blog/assets/app.c16415f9.js"><link rel="modulepreload" href="/blog/assets/new 操作符.html.7b9c84f4.js"><link rel="modulepreload" href="/blog/assets/new 操作符.html.524358d3.js"><link rel="modulepreload" href="/blog/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="stylesheet" href="/blog/assets/style.ddbb8f01.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="aaa"><!--[--><h1 id="new-操作符" tabindex="-1"><a class="header-anchor" href="#new-操作符" aria-hidden="true">#</a> new 操作符</h1><h3 id="new做了什么" tabindex="-1"><a class="header-anchor" href="#new做了什么" aria-hidden="true">#</a> new做了什么</h3><blockquote><p>当在函数前面被加入 <code>new</code> 调用时，也就是构造器调用时，下面这些事情会自动完成： 一个全新的对象会凭空创建（就是被构建） <em>这个新构建的对象会被接入原形链（<code>[[Prototype]]</code>-linked）</em> 这个新构建的对象被设置为函数调用的 <code>this</code> 绑定 除非函数返回一个它自己的其他 <strong>对象</strong>，否则这个被 <code>new</code> 调用的函数将 <em>自动</em> 返回这个新构建的对象。</p></blockquote><h3 id="手写一个new" tabindex="-1"><a class="header-anchor" href="#手写一个new" aria-hidden="true">#</a> 手写一个new</h3><ul><li>使用<code>Object.create()</code></li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code>function myNew1(fn, ...args) {
+
+  // 创建一个新对象，用绑定fn的原型
+  const newObj = Object.create(fn.prototype);
+
+  // 将这个fn绑定到newObj上
+  const result = fn.apply(newObj, args);
+
+  // 如果函数的返回值是一个对象，就返回这个对象，否则就返回这个fn
+  return result instanceof Object ? result : newObj;
+
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><ul><li>直接空对象</li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code>function myNew(fn, ...argus) {
+
+  // 创建一个新对象，用绑定fn的原型
+  const obj = {};
+  obj.__proto__ = fn.prototype;
+
+  // 将这个fn绑定到newObj上
+  let result = fn.apply(obj, argus);
+
+  // 如果函数的返回值是一个对象，就返回这个对象，否则就返回这个fn
+  return result instanceof Object ? result : obj;
+  
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><!--]--></div><!--]--></div>
+    <script type="module" src="/blog/assets/app.c16415f9.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+html.dark {
+
+    --c-brand: #ff5100;
+    --c-bg: #3a454b;
+    --c-bg-navbar: rgba(58, 69, 75, 0.75);
+    --c-border:  rgba(58, 69, 75, 0.125) ;
+    --c-text: #ac6d46;
+    .navbar{
+        backdrop-filter: blur(18px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+    }
+}
+
+.navbar{
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    // background-color: rgba(17, 25, 40, 0.33);
+    // border-radius: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.125);
+}
+:root{
+    --c-bg-navbar: rgba(255, 255, 255, 0.75);
+    --c-border:  rgba(255, 255, 255, 0.125) ;
+    --c-brand: #ff5100;
+}

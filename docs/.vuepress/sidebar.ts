@@ -44,10 +44,6 @@ function parseSidebar(sidebar): SidebarConfigArray {
       }),
     });
   }
-
-
-
-  
   return res;
 }
 
