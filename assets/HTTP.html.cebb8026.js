@@ -1,0 +1,1 @@
+const t={key:"v-f89dc24a",path:"/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/HTTP.html",title:"HTTP\u534F\u8BAE",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:164914517e4,contributors:[{name:"zibin",email:"liuzibin2021@126.com",commits:1}]},filePathRelative:"\u8BA1\u7B97\u673A\u7F51\u7EDC/HTTP.md"};export{t as data};
