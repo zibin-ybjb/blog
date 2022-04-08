@@ -1,25 +1,36 @@
 html.dark {
 
-    --c-brand: #ff5100;
-    --c-bg: #3a454b;
-    --c-bg-navbar: rgba(58, 69, 75, 0.75);
-    --c-border:  rgba(58, 69, 75, 0.125) ;
-    --c-text: #ac6d46;
-    .navbar{
+    --c-brand: #EDE68A;
+    --c-bg: #2F3032;
+    --c-bg-navbar: rgba(47, 48, 50, 0.75);
+    --c-border: rgba(47, 48, 50, 0.75);
+    --c-text: #EEEEEE;
+    .theme-container {
+        background: linear-gradient(to right,#2F3032, #434343, );
+    }
+    .navbar {
         backdrop-filter: blur(18px) saturate(180%);
         -webkit-backdrop-filter: blur(16px) saturate(180%);
     }
 }
 
+
 .navbar{
     backdrop-filter: blur(18px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    // background-color: rgba(17, 25, 40, 0.33);
-    // border-radius: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.125);
+    // border-bottom: 1px solid rgba(255, 255, 255, 0.125);
 }
-:root{
-    --c-bg-navbar: rgba(255, 255, 255, 0.75);
-    --c-border:  rgba(255, 255, 255, 0.125) ;
-    --c-brand: #ff5100;
+
+
+.theme-container {
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+}
+
+:root {
+    --c-bg: transparent;
+    // --c-bg: rgba(255, 255, 255, 0.30);
+    --c-bg-navbar: rgba(255, 255, 255, 0.30);
+    --c-border: rgba(255, 255, 255, 0.125);
+    --c-text: #2F3032;
+    --c-brand: #B0A565;
 }
